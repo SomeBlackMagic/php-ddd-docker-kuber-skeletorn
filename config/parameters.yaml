@@ -1,0 +1,17 @@
+parameters:
+    app.env:                '%env(APP_ENV)%'
+    app.name:               'core'
+    app.version:            '%env(APP_VERSION)%'
+    app.secret:             '%env(APP_SECRET)%'
+    app.api_route_prefix:   '%env(APP_API_ROUTE_PREFIX)%'
+
+    sentry.dsn: '%env(APP_SENTRY_DSN)%'
+
+    redis.host:  '%env(APP_REDIS_HOST)%'
+    redis.port:  '%env(APP_REDIS_PORT)%'
+
+    db.mysql.host:       '%env(APP_MYSQL_HOST)%'
+    db.mysql.port:       '%env(APP_MYSQL_PORT)%'
+    db.mysql.user:       '%env(APP_MYSQL_USER)%'
+    db.mysql.password:   '%env(APP_MYSQL_PASS)%'
+    db.mysql.dbname:     '%env(APP_MYSQL_DB)%'

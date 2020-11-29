@@ -1,0 +1,16 @@
+includes:
+    - vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+        - tests
+    checkMissingIterableValueType: false
+    excludes_analyse:
+        - /app/src/Migrations/*
+        - /app/tests/_support/_generated/*
+    ignoreErrors:
+#	- '#Method .*\\Tests\\.* should return .* but returns object\.#'
+#	- '#Call to an undefined method Mockery\\Expectation::shouldReceive()#'
+#	- '#Property .*\(Mockery\\MockInterface\) does not accept null#'

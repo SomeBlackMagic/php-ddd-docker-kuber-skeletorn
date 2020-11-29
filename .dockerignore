@@ -1,0 +1,13 @@
+# Logs (Symfony4)
+/var/log/*
+!var/log/.gitkeep
+
+# Created by .ignore support plugin (hsz.mobi)
+vendor/
+.pipelines
+.gitlab-ci.sh
+.gitlab-ci-functions
+.helm
+.gitmodules
+.gitignore
+run

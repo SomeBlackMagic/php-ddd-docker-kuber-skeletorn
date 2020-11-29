@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+    redis:
+        image: redis
+        container_name: redis
+        networks:
+            - some_black_magic
+        volumes:
+            - redis_data:/data
+        ports:
+            - 6379:6379
+
+    mysql:
+        container_name: mysql
+        image: mysql:5.7
+        networks:
+            - some_black_magic
+        volumes:
+            - ./.docker/mysql/initdb:/docker-entrypoint-initdb.d/:ro
+            - mysql_data:/var/lib/mysql/
+            - mysql_logs:/var/log/mysql/
+        environment:
+            MYSQL_DATABASE: 'app_db'
+            MYSQL_USER: 'mysql_user'
+            MYSQL_PASSWORD: 'mysql_pass'
+            MYSQL_ROOT_PASSWORD: 'root'
+        ports:
+            - 3306:3306
+
+networks:
+    some_black_magic:
+        name: some_black_magic
+        driver: bridge
+
+volumes:
+    redis_data:
+    mysql_data:
+    mysql_logs:

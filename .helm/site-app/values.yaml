@@ -1,0 +1,20 @@
+replicaCount: 1
+
+
+image:
+  registry: docker.io
+  repository: application/ui-backend/app
+  tag: master
+  pullPolicy: Always
+  pullSecret: __PULL_SECRET__
+  env: prod
+
+app:
+  secretPrefix: site-backend
+
+ingress:
+  secretName: ingress-cert
+
+release:
+  branch: __RELEASE_BRANCH__
+  hash: __RELEASE_HASH__
